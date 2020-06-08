@@ -14,9 +14,14 @@ const gameBoard = document.getElementById('game-board');
 
 function main(currentTime) {
   if (gameOver) {
-    if (confirm('Game over. Play again?')) {
-      window.location = window.location;
-    }
+    window.navigator.vibrate(100);
+
+    setTimeout(() => {
+      if (confirm('Game over. Play again?')) {
+        window.location = window.location;
+      }
+    }, 10);
+    
     return;
   }
 
@@ -26,8 +31,10 @@ function main(currentTime) {
 
   lastRenderTime = currentTime;
 
-  update();
-  draw();
+  if(!gameOver) {
+    update();
+    draw();
+  }
 }
 
 window.requestAnimationFrame(main);

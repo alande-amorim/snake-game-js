@@ -21,6 +21,7 @@ window.addEventListener('keydown', e => {
       break;
   }
 
+  console.log(inputDirection);
   return inputDirection;
 });
 
