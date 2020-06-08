@@ -40,8 +40,7 @@
     }
 
     .food {
-      background-color: #06050a;
-      border: 1px solid #777964;
+      border: 5px dashed #06050a;
     }
 
     #controls {
